@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+for n in $(cat tests/test00)
+do
+  for q in 2 3 5 7 11 15485773 
+  do
+    if [ $((n % q)) -eq 0 ];
+    then
+      p=$((n/q))
+      echo "$n=$p*$q"
+      break
+    fi
+  done
+done
